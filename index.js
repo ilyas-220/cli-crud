@@ -5,6 +5,7 @@ const readline = require("readline");
 async function bacaData() {
   try {
     const data = await fs.readFile("data.json", "utf-8");
+    if(!data.trim()) return [];
     return JSON.parse(data);
   } catch (error) {
     return [];
